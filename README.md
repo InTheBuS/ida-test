@@ -17,4 +17,6 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Screen 
+
+![ProjectScreen](https://sun9-45.userapi.com/impf/OnsuV2dbqh3EIalkCX_SOToM4h08wK0utjut-Q/RctmX6pSbFg.jpg?size=1242x674&quality=96&proxy=1&sign=46b6e4b9cfb1c9c2c14b0c1c95864d88)
