@@ -1,18 +1,35 @@
 <template>
-  <div :class="$style.bodyText">Выберите категорию</div>
+  <div :class="$style.productListWrapper">
+    <ProductItem v-for="item in filteredItemList" :item="item" :key="item.id"/>
+  </div>
 </template>
 
 <script>
-export default {
+import {mapActions, mapGetters} from "vuex"
+import ProductItem from "@/components/ProductItem/index"
 
+export default {
+  components: {
+    ProductItem
+  },
+  computed: {
+    ...mapGetters("ProductList", ["itemList", "filteredItemList"])
+  },
+  methods: {
+    ...mapActions("ProductList", ["productCategoryList"])
+  },
+  async fetch() {
+    await this.productCategoryList(1)
+  }
 }
 </script>
 
 <style module>
-.bodyText {
-  font-size: 36px;
-  font-weight: 700;
-  text-align: center;
+.productListWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
 }
-
 </style>

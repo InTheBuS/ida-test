@@ -54,8 +54,8 @@ export default {
   height: 200px;
 }
 .itemHeaderCart {
-  width: 15%;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   transition: .3s;
   opacity: .4;
   cursor: pointer;
