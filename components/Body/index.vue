@@ -73,6 +73,8 @@ export default {
   padding: 32px 88px;
   width: 100%;
   box-sizing: border-box;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 .bodyRightSelect {

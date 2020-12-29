@@ -1,28 +1,30 @@
 <template>
   <div :class="$style.navbarContainer">
-    <div :class="$style.navbarTittle">
-      TestList
-    </div>
-    <div :class="$style.imgContainer">
-      <div :class="$style.littleSVG" :style="IconCreator(32, 32, '/Cart.svg')" @click.stop="openModal"></div>
-      <div :class="$style.littleCircle">{{ this.totalItemsCountInCart }}</div>
+    <div :class="$style.navbarContent">
+      <div :class="$style.navbarTittle">
+        TestList
+      </div>
+      <div :class="$style.imgContainer">
+        <div :class="$style.littleSVG" :style="IconCreator(32, 32, '/Cart.svg')" @click.stop="openModal"></div>
+        <div :class="$style.littleCircle">{{ this.totalItemsCountInCart }}</div>
 
-      <CartModal v-show="showModal" :closeModal="closeModal">
-        <div v-show="Ordering">
-          <div :class="$style.modalHeader">Корзина</div>
+        <CartModal v-show="showModal" :closeModal="closeModal">
+          <div v-show="Ordering">
+            <div :class="$style.modalHeader">Корзина</div>
 
-          <CartModalEmpty v-if="isCartEmpty()"
-                          :closeModal="closeModal"/>
+            <CartModalEmpty v-if="isCartEmpty()"
+                            :closeModal="closeModal"/>
 
-          <CartModalFilled v-if="!isCartEmpty()"
-                           :itemsInCart="itemsInCart"
-                           :checkForm="checkForm"
-                           :inputForm="inputForm"
-                           :isFormValid="isFormValid"
-                           :sendForm="sendForm"/>
-        </div>
-      <CartModalOrderingComplete v-if="OrderingComplete"/>
-      </CartModal>
+            <CartModalFilled v-if="!isCartEmpty()"
+                             :itemsInCart="itemsInCart"
+                             :checkForm="checkForm"
+                             :inputForm="inputForm"
+                             :isFormValid="isFormValid"
+                             :sendForm="sendForm"/>
+          </div>
+          <CartModalOrderingComplete v-if="OrderingComplete"/>
+        </CartModal>
+      </div>
     </div>
   </div>
 </template>
@@ -113,17 +115,21 @@ export default {
 <style module>
 .navbarContainer {
   width: 100%;
-  height: 66px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   border-radius: 0 0 8px 8px;
   background-color: #FFFFFF;
+
+}
+.navbarContent {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0 98px;
+  max-width: 1800px;
+  height: 66px;
+  margin: 0 auto;
 }
-
 .navbarTittle {
   font-size: 22px;
   font-weight: 700;
@@ -202,17 +208,21 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
 .modalCompleteBodyWrapper {
   margin: auto;
   text-align: center;
 }
+
 .modalComplete {
   font-size: 92px;
 }
+
 .modalCompleteText {
   font-weight: 700;
   font-size: 24px;
 }
+
 .modalCompleteContactText {
   color: #59606D;
   font-size: 16px;
