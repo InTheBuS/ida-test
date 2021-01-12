@@ -26,6 +26,6 @@ export default {
 
 }
 .categoryItemActive {
-  text-decoration: underline;
+  text-decoration: underline black;
 }
 </style>

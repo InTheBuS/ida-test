@@ -1,7 +1,6 @@
 <template>
   <div>
     <div :class="$style.modalBody">
-
       <div :class="$style.modalBodyName">Товары в корзине</div>
       <div>
         <ModalProductItem v-for="(item, index) in itemsInCart"

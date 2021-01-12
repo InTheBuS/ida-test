@@ -10,7 +10,11 @@
 
         <CartModal v-show="showModal" :closeModal="closeModal">
           <div v-show="Ordering">
-            <div :class="$style.modalHeader">Корзина</div>
+            <div :class="$style.modalHeader">
+              <div :class="$style.modalHeaderName">Корзина</div>
+              <div :class="$style.modalHeaderClose" @click.stop="closeModal">x</div>
+            </div>
+
 
             <CartModalEmpty v-if="isCartEmpty()"
                             :closeModal="closeModal"/>
@@ -160,11 +164,22 @@ export default {
   text-align: center;
   color: white;
 }
-
 .modalHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modalHeaderName {
   font-weight: 700;
   font-size: 32px;
 }
+.modalHeaderClose {
+  font-weight: 700;
+  font-size: 32px;
+  cursor: pointer;
+}
+
 
 
 .modalButton {

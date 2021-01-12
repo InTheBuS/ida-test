@@ -1,26 +1,14 @@
 <template>
   <div :class="$style.productListWrapper">
-    <ProductItem v-for="item in filteredItemList" :item="item" :key="item.id"/>
   </div>
 </template>
 
 <script>
-import {mapActions, mapGetters} from "vuex"
-import ProductItem from "@/components/ProductItem/index"
 
 export default {
-  components: {
-    ProductItem
+  mounted() {
+    this.$router.push({path: "/category/1"})
   },
-  computed: {
-    ...mapGetters("ProductList", ["itemList", "filteredItemList"])
-  },
-  methods: {
-    ...mapActions("ProductList", ["productCategoryList"])
-  },
-  async fetch() {
-    await this.productCategoryList(1)
-  }
 }
 </script>
 
