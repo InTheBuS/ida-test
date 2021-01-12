@@ -2,7 +2,7 @@
   <div>
     <div :class="$style.modalBody">
       <div :class="$style.modalBodyName">Товары в корзине</div>
-      <div>
+      <div >
         <ModalProductItem v-for="(item, index) in itemsInCart"
                           :item="item"
                           :key="item.id + index"
@@ -13,11 +13,12 @@
       <div :class="$style.modalBodyName">
         Оформить заказ
       </div>
-      <div>
+      <div :class="$style.modalInputs">
         <InputCreator v-for="input in inputForm" :input="input" :key="input.name" @change="checkForm"
                       :checkIsValid="checkForm"/>
       </div>
       <button
+        :disabled="!isFormValid"
         :class="isFormValid ? $style.modalButton : $style.modalButtonBlocked"
         @click.stop="sendForm">
         Отправить
@@ -62,7 +63,9 @@ export default {
   transition: .3s;
   cursor: pointer;
 }
-
+.modalInputs input {
+  font-family: 'PT Sans', sans-serif;
+}
 .modalButton:hover {
   opacity: .7;
 }

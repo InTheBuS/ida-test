@@ -1,9 +1,5 @@
 <template>
   <div :class="$style.modalCompleteWrapper">
-    <div :class="$style.modalHeader">
-      <div :class="$style.modalHeaderName">Корзина</div>
-      <div></div>
-    </div>
     <div :class="$style.modalCompleteBodyWrapper">
       <div :class="$style.modalComplete">👌</div>
       <div :class="$style.modalCompleteText">Заявка успешно отправлена</div>
@@ -21,7 +17,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .modalHeaderName {
   font-weight: 700;
@@ -30,9 +26,10 @@
 
 .modalCompleteWrapper {
   width: 100%;
-  height: 100%;
+  height: 85vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .modalCompleteBodyWrapper {

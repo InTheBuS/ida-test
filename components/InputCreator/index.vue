@@ -8,7 +8,7 @@
     :mask="['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]"
     placeholderChar="_"
     :placeholder="input.placeholder"
-    @change="checkIsValid">
+    :change="checkIsValid()">
   </masked-input>
   <input v-model="input.value"
          :class="$style.formInput"
